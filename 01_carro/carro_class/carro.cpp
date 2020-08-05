@@ -117,7 +117,7 @@ int main() {
             if(param.size() > 0){
                 carro.dirigir(strtof((param).c_str (), 0));
             }else{
-                cout << "vai andar quanto peste\n";
+                cout << "vai andar quanto peste?\n";
             }
         }else if(cmd == "quilometragem"){
             cout << carro.get_km() << " Km\n";
