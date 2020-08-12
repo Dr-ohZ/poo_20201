@@ -32,7 +32,7 @@ struct Sala{
                     cadeiras[indice] = Cliente(id, fone, false);
                     return true;
                 }else{
-                    std::cout << "fail: " << std::endl;
+                    std::cout << "fail: cliente já está no cinema" << std::endl;
                     return false;
                 }
             }else{
@@ -57,6 +57,13 @@ struct Sala{
 int main(){
     Sala sala(5);
     //sala.cadeiras[3] = Cliente("Elvis", "88", false);
-    sala.ingressar("Elvis", "8899", 8);
+    sala.ingressar("Elvis", "8899", 2); // entra
+    sala.ingressar("Elvis", "8898", 2); // cadeira ocupada
+    sala.ingressar("Elvis", "8899", 1); // já está no cinema
+
+    sala.ingressar("Bia", "8897", 8); // out of index
+    sala.ingressar("bia", "8897", 4); // entra
+
+
     std::cout << sala.toString() << "\n";
 }
